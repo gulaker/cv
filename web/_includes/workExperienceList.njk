@@ -1,0 +1,8 @@
+<ol reversed class="workExperience" style="counter-reset: start-from {{ workExperiencesList.length + 1 }}">
+{% for workExperience in workExperiencesList | reverse %}
+  {% set currentWorkExperience = workExperience.data.workExperience %}
+  <li class="workExperiencelist-item">
+    <h3>{{currentWorkExperience.company}}</h3>
+  </li> 
+{% endfor %}
+</ol>
