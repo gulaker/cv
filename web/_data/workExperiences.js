@@ -1,17 +1,19 @@
-const groq = require('groq')
-const BlocksToMarkdown = require('@sanity/block-content-to-markdown')
-const client = require('../utils/sanityClient.js')
-const serializers = require('../utils/serializers')
-const overlayDrafts = require('../utils/overlayDrafts')
+const groq = require("groq");
+const client = require("../utils/sanityClient.js");
+const dateDisplayer = require("../utils/dateDisplayer");
 
-const hasToken = !!client.config().token
-
-async function getWorkExperiences () {
-  const filter = groq`*[_type == "workExperience"]`
-  const docs = await client.fetch(filter).catch(err => console.error(err))
-  //const authors = docs.map(generateAuthor)
-  // const reducedWorkExperiences = overlayDrafts(hasToken, authors)
-  return docs
+async function getWorkExperiences() {
+  const filter = groq`*[_type == "workExperience"]{
+    company, description, companyLogo, jobTitle, startDate, endDate,
+    "logoUrl": companyLogo.asset -> url
+  }`;
+  const docs = await client.fetch(filter).catch((err) => console.error(err));
+  const workExperiences = docs.map((workExperience) => ({
+    ...workExperience,
+    startText: dateDisplayer.displayMonthYear(workExperience.startDate),
+    endText: dateDisplayer.displayMonthYear(workExperience.endDate),
+  }));
+  return workExperiences;
 }
 
-module.exports = getWorkExperiences
+module.exports = getWorkExperiences;

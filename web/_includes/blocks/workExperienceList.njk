@@ -1,9 +1,19 @@
 {% set workExperiencesList = collections.myWorkExperiences %}
-<ol reversed class="workExperience" style="counter-reset: start-from {{ workExperiencesList.length + 1 }}">
+<ul reversed class="cardContainer workExperience" style="counter-reset: start-from {{ workExperiencesList.length + 1 }}">
 {% for workExperience in workExperiencesList | reverse %}
   {% set currentWorkExperience = workExperience.data.workExperience %}
-  <li class="workExperiencelist-item">
-    <h3>{{currentWorkExperience.company}}</h3>
+  <li class="card workExperiencelist-item">
+    <div class="card-topRow">
+      <div class="card-logoContainer">
+        <img src={{ currentWorkExperience.logoUrl}} class="card-logo"/>
+      </div>
+      <div class="card-titleContainer">
+        <h3>{{currentWorkExperience.company}}</h3>
+        <h4 class="card-jobTitle">{{currentWorkExperience.jobTitle.english}}</h4>
+        <h4>{{currentWorkExperience.startText}} - {{currentWorkExperience.endText}}</h4>
+      </div>
+    </div>
+    <p>{{currentWorkExperience.description.english}}</p>
   </li> 
 {% endfor %}
-</ol>
+</ul>
