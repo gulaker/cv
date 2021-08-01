@@ -1,0 +1,20 @@
+{% set educationsList = collections.myEducations %}
+<h2>Education</h2>
+<ul reversed class="cardContainer education" style="counter-reset: start-from {{ educationsList.length + 1 }}">
+{% for education in educationsList | reverse %}
+  {% set currentEducation = education.data.education %}
+  <li class="card educationlist-item">
+    <div class="card-topRow">
+      <div class="card-logoContainer">
+        <img src={{ currentEducation.logoUrl}} class="card-logo"/>
+      </div>
+      <div class="card-titleContainer">
+        <h3>{{currentEducation.school}}</h3>
+        <h4 class="card-subTitle">{{currentEducation.study.english}}</h4>
+        <h4>{{currentEducation.startText}} - {{currentEducation.endText}}</h4>
+      </div>
+    </div>
+    <p class="card-description">{{currentEducation.description.english}}</p>
+  </li> 
+{% endfor %}
+</ul>

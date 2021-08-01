@@ -6,7 +6,7 @@ export default {
         templateRepoId: 'sanity-io/sanity-template-eleventy-blog'
       }
     },
-    {name: 'structure-menu'},
+    { name: 'structure-menu' },
     {
       name: 'project-info',
       options: {
@@ -39,15 +39,10 @@ export default {
             value: 'https://github.com/gulaker/cv',
             category: 'Code'
           },
-          {title: 'Frontend', value: 'https://cv-web-9g7931yk.netlify.app', category: 'apps'}
+          { title: 'Frontend', value: 'https://cv-web-9g7931yk.netlify.app', category: 'apps' }
         ]
       }
     },
-    {name: 'project-users', layout: {height: 'auto'}},
-    {
-      name: 'document-list',
-      options: {title: 'Recent blog posts', order: '_createdAt desc', types: ['post']},
-      layout: {width: 'medium'}
-    }
+    { name: 'project-users', layout: { height: 'auto' } }
   ]
 }

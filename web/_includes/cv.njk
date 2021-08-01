@@ -4,6 +4,8 @@ templateClass: tmpl-cv
 ---
 <h1>David Gulakers CV</h1>
 
+{% include "blocks/educationList.njk" %}
 {% include "blocks/workExperienceList.njk" %}
+
 
 {{ content | safe }}
