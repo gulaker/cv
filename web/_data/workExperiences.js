@@ -3,7 +3,7 @@ const client = require("../utils/sanityClient.js");
 const dateDisplayer = require("../utils/dateDisplayer");
 
 async function getWorkExperiences() {
-  const filter = groq`*[_type == "workExperience"]{
+  const filter = groq`*[_type == "workExperience"] | order(endDate){
     company, description, companyLogo, jobTitle, startDate, endDate,
     "logoUrl": companyLogo.asset -> url
   }`;

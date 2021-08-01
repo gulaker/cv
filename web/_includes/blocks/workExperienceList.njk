@@ -1,4 +1,5 @@
 {% set workExperiencesList = collections.myWorkExperiences %}
+<h2>Work experience</h2>
 <ul reversed class="cardContainer workExperience" style="counter-reset: start-from {{ workExperiencesList.length + 1 }}">
 {% for workExperience in workExperiencesList | reverse %}
   {% set currentWorkExperience = workExperience.data.workExperience %}
@@ -13,7 +14,7 @@
         <h4>{{currentWorkExperience.startText}} - {{currentWorkExperience.endText}}</h4>
       </div>
     </div>
-    <p>{{currentWorkExperience.description.english}}</p>
+    <p class="card-description">{{currentWorkExperience.description.english}}</p>
   </li> 
 {% endfor %}
 </ul>
