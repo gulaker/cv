@@ -16,7 +16,7 @@ const monthText = {
 function displayMonthYear(dateString) {
   const splitted = dateString.split("-");
   const year = splitted[0];
-  const month = monthText[parseInt(splitted[1])];
+  const month = monthText[parseInt(splitted[1], 10)];
   return `${month} ${year}`;
 }
 
