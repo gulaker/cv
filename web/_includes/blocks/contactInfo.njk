@@ -1,0 +1,17 @@
+<div class="topRow">
+    <img src={{contactInfo.pictureUrl}} alt="David Gulaker" class="topRow-profilePicture"/>
+    <div class="topRow-textBlock">
+        <h1>David Gulaker</h1>
+        <h3>{{contactInfo.birthDate}}</h3>
+        <h3>{{contactInfo.phone}}</h3>
+        <h3>{{contactInfo.address}}</h3>
+        <div class="topRow-socialContact">
+        {% for socialContact in contactInfo.social %}
+                <a href={{socialContact.hyperLink}}>
+                    <img src={{socialContact.iconUrl}} class="socialIcon"/>
+                    <span class="topRow-socialContact-username">{{socialContact.username}}</span>
+                </a>
+        {% endfor %}
+        </div>
+    </div>
+</div>

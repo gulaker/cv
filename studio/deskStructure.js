@@ -3,7 +3,7 @@ import { MdSettings } from 'react-icons/md'
 import { MdPerson } from 'react-icons/md'
 
 const hiddenDocTypes = listItem =>
-  !['category', 'author', 'post', 'siteSettings'].includes(listItem.getId())
+  !['category', 'author', 'post', 'siteSettings', 'contactInfo'].includes(listItem.getId())
 
 export default () =>
   S.list()
@@ -17,6 +17,15 @@ export default () =>
             .id('siteSettings')
             .schemaType('siteSettings')
             .documentId('siteSettings')
+        ),
+      S.listItem()
+        .title('Contact Info')
+        .icon(MdPerson)
+        .child(
+          S.editor()
+            .id('contactInfo')
+            .schemaType('contactInfo')
+            .documentId('contactInfo')
         ),
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
