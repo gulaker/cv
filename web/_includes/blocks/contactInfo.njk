@@ -4,14 +4,14 @@
         <h1>David Gulaker</h1>
         <div class="topRow-contact">
         {% for contact in contactInfo.contact %}
-                <img src={{contact.iconUrl}} class="socialIcon" alt={{contact.altText.english}}/>
+                <img src={{contact.iconUrl}} class="socialIcon" alt={{contact.altText.english}} />
                 <span class="topRow-contact-info">{{contact.info.english}}</span>
         {% endfor %}
         </div>
         <div class="topRow-socialContact">
         {% for socialContact in contactInfo.social %}
                 <a href={{socialContact.hyperLink}}>
-                    <img src={{socialContact.iconUrl}} class="socialIcon" alt={{socialContact.altText.e}}/>
+                    <img src={{socialContact.iconUrl}} class="socialIcon" alt={{socialContact.altText.english}} />
                     <span class="topRow-socialContact-username">{{socialContact.username}}</span>
                 </a>
         {% endfor %}
