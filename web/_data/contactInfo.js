@@ -4,7 +4,7 @@ const client = require("../utils/sanityClient");
 module.exports = async function getContactInfo() {
   const res = await client.fetch(groq`
     *[_id == "contactInfo"]{
-      picture, phone, birthDate, address,
+      picture, description,
       "pictureUrl": picture.asset -> url,
       social[]{
         ...,

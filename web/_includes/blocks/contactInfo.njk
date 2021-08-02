@@ -2,6 +2,7 @@
     <img src={{contactInfo.pictureUrl}} alt="David Gulaker" class="topRow-profilePicture"/>
     <div class="topRow-textBlock">
         <h1>David Gulaker</h1>
+        <p class="topRow-description">{{contactInfo.description.english}}</p>
         <div class="topRow-contact">
         {% for contact in contactInfo.contact %}
                 <img src={{contact.iconUrl}} class="socialIcon" alt={{contact.altText.english}} />

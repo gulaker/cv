@@ -69,11 +69,6 @@ ul {
   line-height: 1.2rem;
 }
 
-p {
-  padding-right: 0;
-  vertical-align: baseline;
-}
-
 blockquote {
   font-size: 1.4rem;
 }
@@ -189,6 +184,7 @@ a {
 }
 
 .topRow-textBlock {
+  max-width: 46rem;
   display: inline-block;
   vertical-align: bottom;
   margin-bottom: auto;
@@ -205,4 +201,10 @@ a {
 
 .topRow-contact {
   padding-bottom: 0.5rem;
+}
+
+.topRow-description {
+  padding-left: 0.5rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.0125rem;
 }
