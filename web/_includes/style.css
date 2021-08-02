@@ -200,8 +200,9 @@ a {
   width: auto;
   height: auto;
   vertical-align: middle;
+  padding-left: 0.5rem;
 }
 
-.topRow-socialContact-username {
-  padding-right: 0.5rem;
+.topRow-contact {
+  padding-bottom: 0.5rem;
 }

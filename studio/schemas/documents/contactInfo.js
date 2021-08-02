@@ -25,6 +25,12 @@ export default {
       type: 'string'
     },
     {
+      name: 'contact',
+      title: 'Contact informations',
+      type: 'array',
+      of: [{ type: 'contact' }]
+    },
+    {
       name: 'social',
       title: 'Social Media',
       type: 'array',

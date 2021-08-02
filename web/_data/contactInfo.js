@@ -9,6 +9,10 @@ module.exports = async function getContactInfo() {
       social[]{
         ...,
         "iconUrl": icon.asset -> url
+      },
+      contact[]{
+        ...,
+        "iconUrl": icon.asset -> url
       }
     }[0]
   `);

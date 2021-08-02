@@ -13,6 +13,7 @@ import contactInfo from './documents/contactInfo'
 // Object types
 import multiLanguageString from './objects/multiLanguageString'
 import socialContact from './objects/socialContact'
+import contact from './objects/contact'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -28,7 +29,8 @@ export default createSchema({
     workExperience,
     contactInfo,
     multiLanguageString,
-    socialContact
+    socialContact,
+    contact
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

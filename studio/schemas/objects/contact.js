@@ -1,6 +1,6 @@
 export default {
-  name: 'socialContact',
-  title: 'Social Media contact',
+  name: 'contact',
+  title: 'Contact Information',
   type: 'object',
   fields: [
     {
@@ -14,14 +14,9 @@ export default {
       type: 'multiLanguageString'
     },
     {
-      name: 'username',
-      title: 'Username',
-      type: 'string'
-    },
-    {
-      name: 'hyperlink',
-      title: 'Hyperlink',
-      type: 'string'
+      name: 'info',
+      title: 'Info',
+      type: 'multiLanguageString'
     }
   ]
 }
