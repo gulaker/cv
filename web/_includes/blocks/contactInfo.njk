@@ -2,17 +2,17 @@
     <img src={{contactInfo.pictureUrl}} alt="David Gulaker" class="topRow-profilePicture"/>
     <div class="topRow-textBlock">
         <h1>David Gulaker</h1>
-        <p class="topRow-description">{{contactInfo.description.english}}</p>
+        <p class="topRow-description">{{contactInfo.description[locale]}}</p>
         <div class="topRow-contact">
         {% for contact in contactInfo.contact %}
-                <img src={{contact.iconUrl}} class="socialIcon" alt={{contact.altText.english}} />
-                <span class="topRow-contact-info">{{contact.info.english}}</span>
+                <img src={{contact.iconUrl}} class="socialIcon" alt={{contact.altText[locale]}} />
+                <span class="topRow-contact-info">{{contact.info[locale]}}</span>
         {% endfor %}
         </div>
         <div class="topRow-socialContact">
         {% for socialContact in contactInfo.social %}
                 <a href={{socialContact.hyperLink}}>
-                    <img src={{socialContact.iconUrl}} class="socialIcon" alt={{socialContact.altText.english}} />
+                    <img src={{socialContact.iconUrl}} class="socialIcon" alt={{socialContact.altText[locale]}} />
                     <span class="topRow-socialContact-username">{{socialContact.username}}</span>
                 </a>
         {% endfor %}

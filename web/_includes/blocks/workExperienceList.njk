@@ -10,11 +10,11 @@
       </div>
       <div class="card-titleContainer">
         <h3>{{currentWorkExperience.company}}</h3>
-        <h4 class="card-subTitle">{{currentWorkExperience.jobTitle.english}}</h4>
+        <h4 class="card-subTitle">{{currentWorkExperience.jobTitle[locale]}}</h4>
         <h5 class="card-date">{{currentWorkExperience.startText}} - {{currentWorkExperience.endText}}</h5>
       </div>
     </div>
-    <p class="card-description">{{currentWorkExperience.description.english}}</p>
+    <p class="card-description">{{currentWorkExperience.description[locale]}}</p>
   </li> 
 {% endfor %}
 </ul>
