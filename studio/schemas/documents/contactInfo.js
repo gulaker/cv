@@ -10,19 +10,9 @@ export default {
       title: 'Picture'
     },
     {
-      name: 'phone',
-      type: 'string',
-      title: 'Phone'
-    },
-    {
-      name: 'birthDate',
-      title: 'Birth date',
-      type: 'date'
-    },
-    {
-      name: 'address',
-      title: 'address',
-      type: 'string'
+      name: 'description',
+      title: 'Description',
+      type: 'multiLanguageString'
     },
     {
       name: 'contact',
