@@ -1,0 +1,21 @@
+---
+layout: base.njk
+---
+
+<h1>Redirecting to correct language.</h1>
+<h4>
+  Or you can select your language manually here:
+  <a href="/no/" style="text-decoration: underline">Norsk bokmål</a>
+  <a href="/en/" style="text-decoration: underline">English</a>
+</h4>
+
+<script>
+  const allowedLanguages = ["nb", "en"];
+  var userLanguage = window.navigator.userLanguage || window.navigator.language;
+  var lang = allowedLanguages.includes(userLanguage.slice(0, 2)) ? userLanguage.slice(0, 2) : "en";
+  var headEl = document.getElementsByTagName("body")[0];
+  headEl.innerHTML =
+    headEl.innerHTML +
+    `
+  <meta http-equiv="Refresh" content="0; URL=/${lang}/" />`;
+</script>

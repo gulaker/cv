@@ -1,3 +1,8 @@
 {
-  "locale": "english"
+  "lang": "english",
+  "lang-code": "en",
+  "headers": {
+    "education": "Education",
+    "experience": "Work Experience"
+  }
 }
