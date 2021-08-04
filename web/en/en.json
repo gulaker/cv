@@ -3,6 +3,9 @@
   "langCode": "en",
   "headers": {
     "education": "Education",
-    "experience": "Work Experience"
+    "experience": "Work Experience",
+    "otherExperience": "Other experience",
+    "accomplishments": "Engagements and accomplishments",
+    "references": "Referanser"
   }
 }

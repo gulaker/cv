@@ -3,6 +3,9 @@
   "langCode": "nb",
   "headers": {
     "education": "Utdanning",
-    "experience": "Arbeidserfaring"
+    "experience": "Arbeidserfaring",
+    "otherExperience": "Annen erfaring",
+    "accomplishments": "Engasjementer og utmerkelser",
+    "references": "Referanser"
   }
 }

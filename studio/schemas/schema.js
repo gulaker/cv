@@ -9,6 +9,8 @@ import education from './documents/education'
 import siteSettings from './documents/siteSettings'
 import workExperience from './documents/workExperience'
 import contactInfo from './documents/contactInfo'
+import otherExperience from './documents/otherExperience'
+import accomplishment from './documents/accomplishment'
 
 // Object types
 import multiLanguageString from './objects/multiLanguageString'
@@ -28,6 +30,8 @@ export default createSchema({
     siteSettings,
     workExperience,
     contactInfo,
+    otherExperience,
+    accomplishment,
     multiLanguageString,
     socialContact,
     contact

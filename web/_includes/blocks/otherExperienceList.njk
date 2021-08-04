@@ -1,0 +1,20 @@
+{% set otherExperiencesList = collections.myOtherExperiences %}
+<h2>{{headers.otherExperience}}</h2>
+<ul reversed class="cardContainer otherExperience" style="counter-reset: start-from {{ otherExperiencesList.length + 1 }}">
+{% for otherExperience in otherExperiencesList | reverse %}
+  {% set currentOtherExperience = otherExperience.data.otherExperience %}
+  <li class="card otherExperiencelist-item">
+    <div class="card-topRow">
+      <div class="card-logoContainer">
+        <img src="{{ currentOtherExperience.logoUrl}}" class="card-logo"/>
+      </div>
+      <div class="card-titleContainer">
+        <h3>{{currentOtherExperience.company}}</h3>
+        <h4 class="card-subTitle">{{currentOtherExperience.jobTitle[lang]}}</h4>
+        <h5 class="card-date">{{currentOtherExperience.startText}} - {{currentOtherExperience.endText}}</h5>
+      </div>
+    </div>
+    <p class="card-description">{{currentOtherExperience.description[lang]}}</p>
+  </li> 
+{% endfor %}
+</ul>
