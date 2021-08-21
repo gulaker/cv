@@ -11,6 +11,7 @@ import workExperience from './documents/workExperience'
 import contactInfo from './documents/contactInfo'
 import otherExperience from './documents/otherExperience'
 import accomplishment from './documents/accomplishment'
+import referenceContact from './documents/referenceContact'
 
 // Object types
 import multiLanguageString from './objects/multiLanguageString'
@@ -32,6 +33,7 @@ export default createSchema({
     contactInfo,
     otherExperience,
     accomplishment,
+    referenceContact,
     multiLanguageString,
     socialContact,
     contact

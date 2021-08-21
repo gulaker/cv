@@ -1,0 +1,16 @@
+{% set referenceList = collections.myReferences %}
+<h2>{{headers.references}}</h2>
+<ul class="cardContainer reference">
+{% for reference in referenceList %}
+  {% set currentReference = reference.data.reference %}
+  <li class="list-item referencelist-item">
+    <div class="list-contentContainer">
+      <p class="reference-name inline">{{currentReference.name}},</p>
+      <p class="reference-relation inline">{{currentReference.relation[lang]}},</p>
+      <p class="reference-company inline">{{currentReference.company}},</p>
+      <p class="reference-phone inline">{{currentReference.phone}}</p>
+    </div>
+  </li> 
+{% endfor %}
+</ul>
+</div>
