@@ -1,6 +1,6 @@
 const groq = require("groq");
 const client = require("../utils/sanityClient");
-const { displayMonthYear } = require("../utils/dateDisplayer");
+const { displayMonthYear, composeDateText } = require("../utils/dateDisplayer");
 
 async function getEducations() {
   const filter = groq`*[_type == "education"] | order(endDate){
@@ -8,11 +8,15 @@ async function getEducations() {
     "logoUrl": schoolLogo.asset -> url
   }`;
   const docs = await client.fetch(filter).catch((err) => console.error(err));
-  const educations = docs.map((education) => ({
-    ...education,
-    startText: displayMonthYear(education.startDate),
-    endText: displayMonthYear(education.endDate),
-  }));
+
+  const educations = docs.map((education) => {
+    const startText = displayMonthYear(education.startDate);
+    const endText = displayMonthYear(education.endDate);
+    return {
+      ...education,
+      dateText: composeDateText(startText, endText),
+    };
+  });
   return educations;
 }
 

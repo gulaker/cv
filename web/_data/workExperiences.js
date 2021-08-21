@@ -1,6 +1,6 @@
 const groq = require("groq");
 const client = require("../utils/sanityClient");
-const { displayMonthYear } = require("../utils/dateDisplayer");
+const { displayMonthYear, composeDateText } = require("../utils/dateDisplayer");
 
 async function getWorkExperiences() {
   const filter = groq`*[_type == "workExperience"] | order(endDate){
@@ -8,11 +8,14 @@ async function getWorkExperiences() {
     "logoUrl": companyLogo.asset -> url
   }`;
   const docs = await client.fetch(filter).catch((err) => console.error(err));
-  const workExperiences = docs.map((workExperience) => ({
-    ...workExperience,
-    startText: displayMonthYear(workExperience.startDate),
-    endText: displayMonthYear(workExperience.endDate),
-  }));
+  const workExperiences = docs.map((workExperience) => {
+    const startText = displayMonthYear(workExperience.startDate);
+    const endText = displayMonthYear(workExperience.endDate);
+    return {
+      ...workExperience,
+      dateText: composeDateText(startText, endText),
+    };
+  });
   return workExperiences;
 }
 
