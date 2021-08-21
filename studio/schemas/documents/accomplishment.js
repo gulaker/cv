@@ -1,6 +1,6 @@
 export default {
   name: 'accomplishment',
-  title: 'Engagements and accomplishments',
+  title: 'Positions and accomplishments',
   type: 'document',
   fields: [
     {

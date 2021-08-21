@@ -1,20 +1,20 @@
 {% set accomplishmentsList = collections.myAccomplishments %}
+<div class="accomplishment-container">
 <h2>{{headers.accomplishments}}</h2>
-<ul reversed class="cardContainer accomplishment" style="counter-reset: start-from {{ accomplishmentsList.length + 1 }}">
+<ul reversed class="listContainer accomplishment" style="counter-reset: start-from {{ accomplishmentsList.length + 1 }}">
 {% for accomplishment in accomplishmentsList | reverse %}
   {% set currentAccomplishment = accomplishment.data.accomplishment %}
-  <li class="card accomplishmentlist-item">
-    <div class="card-topRow">
-      <div class="card-logoContainer">
-        <img src="{{ currentAccomplishment.iconUrl}}" class="card-logo"/>
-      </div>
-      <div class="card-titleContainer">
-        <h3>{{currentAccomplishment.institution}}</h3>
-        <h4 class="card-subTitle">{{currentAccomplishment.engagement[lang]}}</h4>
-        <h5 class="card-date">{{currentAccomplishment.startText}} - {{currentAccomplishment.endText}}</h5>
-      </div>
+  <li class="list-item accomplishmentlist-item two-columns-container">
+    <div class="list-imgContainer">
+      <img src="{{ currentAccomplishment.iconUrl}}" class="list-icon"/>
     </div>
-    <p class="card-description">{{currentAccomplishment.description[lang]}}</p>
+    <div class="list-contentContainer">
+      <h4 class="list-title inline">{{currentAccomplishment.engagement[lang]}},</h4>
+      <h4 class="card-subTitle inline">{{currentAccomplishment.institution}}{% if currentAccomplishment.dateText[lang]%},</h4>
+      <h4 class="card-date inline">{{currentAccomplishment.dateText[lang]}}{% endif %}</h4>
+      <p class="list-description">{{currentAccomplishment.description[lang]}}</p>
+    </div>
   </li> 
 {% endfor %}
 </ul>
+</div>

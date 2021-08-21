@@ -5,7 +5,10 @@ templateClass: tmpl-cv
 {% include "blocks/contactInfo.njk" %}
 {% include "blocks/educationList.njk" %}
 {% include "blocks/workExperienceList.njk" %}
+<div class="two-columns-container">
 {% include "blocks/otherExperienceList.njk" %}
 {% include "blocks/accomplishment.njk" %}
+</div>
+{% include "blocks/referenceList.njk" %}
 
 {{ content | safe }}
