@@ -1,0 +1,15 @@
+{% set technologies = collections.myTechnologies %}
+<div class="technologies">
+<h2>{{headers.technologies}}</h2>
+<div class="technologies-list-container">
+{% for technologyList in technologies %}
+    {% set currentTechnologies = technologyList.data.technologyList %}
+    <p>
+        <span class="technologies-list-title">{{currentTechnologies.title[lang]}}:</span>
+        {% for technology in currentTechnologies.technologies %}
+        <span class="technology-name">{{technology}}</span>
+        {% endfor %}
+    </p>
+{% endfor %}
+</div>
+</div>

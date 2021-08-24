@@ -288,3 +288,11 @@ a {
 .referencelist-item {
   padding: 0;
 }
+
+.technologies-list-title {
+  font-weight: 600;
+}
+
+.technology-name:not(:last-of-type):after {
+  content: ",";
+}
